@@ -1,7 +1,11 @@
 function showScreen(screenNum) {
-    // Hide all screens
+    // Music starts when she clicks "Open Your Surprise"
+    const music = document.getElementById('bgMusic');
+    if(music) {
+        music.play().catch(e => console.log("Audio needs user interaction"));
+    }
+
     document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
-    // Show selected screen
     document.getElementById('screen' + screenNum).classList.remove('hidden');
 
     if(screenNum === 2) {
@@ -9,7 +13,6 @@ function showScreen(screenNum) {
     }
 }
 
-// Typing Effect
 function startTyping() {
     const text = "In every heartbeat of mine, there is a piece of you that I’ll cherish forever... ❤️";
     const el = document.getElementById('typing-text');
@@ -22,29 +25,25 @@ function startTyping() {
         } else {
             clearInterval(timer);
         }
-    }, 100);
+    }, 70);
 }
 
-// Hearts and Flowers Background
 function createFloater() {
     const container = document.getElementById('flow-container');
     const items = ['❤️', '🌸', '💖', '🌹', '✨'];
     const floater = document.createElement('div');
-    
     floater.className = 'floater';
     floater.innerHTML = items[Math.floor(Math.random() * items.length)];
     floater.style.left = Math.random() * 100 + 'vw';
     floater.style.fontSize = Math.random() * 20 + 20 + 'px';
     floater.style.animationDuration = Math.random() * 3 + 4 + 's';
-    
     container.appendChild(floater);
     setTimeout(() => floater.remove(), 7000);
 }
 
-// Randomly rotate polaroids
 document.querySelectorAll('.polaroid').forEach(p => {
-    const randomRotation = Math.floor(Math.random() * 20 - 10);
+    const randomRotation = Math.floor(Math.random() * 16 - 8);
     p.style.setProperty('--r', randomRotation + 'deg');
 });
 
-setInterval(createFloater, 400);
+setInterval(createFloater, 450);
