@@ -3,79 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Queen, Misbah ❤️</title>
+    <title>My Heart's Journey | For Misbah</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
     <audio id="bgMusic" loop>
         <source src="song.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="flow-container" id="flow-container"></div>
+    <div class="cursor"></div>
+    <div id="particles-js"></div>
 
-    <!-- Section 1: Deep Apology -->
-    <section class="screen" id="screen1">
-        <div class="glass-container">
-            <h1 class="loving-title">My Dearest Misbah</h1>
-            <p class="deep-note">In a moment of anger, I forgot that you are my peace. My words were harsh, but my heart is only full of love for you.</p>
-            <p class="sub-text">I'm so sorry for everything I said... ❤️</p>
-            <button class="main-btn" onclick="showScreen(2)">Will You Listen to My Heart? ❤️</button>
+    <!-- Chapter 1: The Realization -->
+    <section class="chapter active" id="chap1">
+        <div class="content-wrapper">
+            <h2 class="pre-title">To the Queen of my heart,</h2>
+            <h1 class="main-title reveal">I'm Sorry, Misbah</h1>
+            <p class="deep-text reveal">Anger is a temporary cloud, but you are my eternal sun. I am lost without your light.</p>
+            <div class="scroll-indicator" onclick="nextChapter(2)"><span>Explore My Heart</span></div>
         </div>
     </section>
 
-    <!-- Section 2: The Heart of the Matter -->
-    <section class="screen hidden" id="screen2">
-        <div class="cube-container">
+    <!-- Chapter 2: The Core -->
+    <section class="chapter" id="chap2">
+        <div class="cube-showcase">
             <div class="cube">
-                <div class="face front">Forgive Me</div>
-                <div class="face back">I Was Wrong</div>
-                <div class="face right">Misbah ❤️ Osama</div>
-                <div class="face left">My Everything</div>
-                <div class="face top">06-03-2024</div>
-                <div class="face bottom">Always Yours</div>
+                <div class="face front">Misbah ❤️</div>
+                <div class="face back">Forgive Me</div>
+                <div class="face right">06.03.2024</div>
+                <div class="face left">My World</div>
+                <div class="face top">Osama</div>
+                <div class="face bottom">Always</div>
             </div>
         </div>
-        <div class="message-box">
+        <div class="letter-box">
             <p id="typing-text"></p>
-            <button class="main-btn pink-btn" onclick="showScreen(3)">Look at Our Beautiful Journey 📸</button>
         </div>
+        <button class="nav-btn" onclick="nextChapter(3)">Our Timeless Memories 📸</button>
     </section>
 
-    <!-- Section 3: Professional Gallery -->
-    <section class="screen hidden" id="screen3">
-        <h2 class="gallery-title">You Are My Whole World</h2>
-        <div class="gallery">
-            <!-- Add all 15 pictures here -->
-            <div class="polaroid"><img src="1.jpg"><p>My Peace ❤️</p></div>
-            <div class="polaroid"><img src="2.jpg"><p>Purest Soul ✨</p></div>
-            <div class="polaroid"><img src="3.jpeg"><p>The Luckiest Day ❤️</p></div>
-            <div class="polaroid"><img src="4.jpg"><p>Your Smile ✨</p></div>
-            <div class="polaroid"><img src="5.jpg"><p>Our Bond ❤️</p></div>
-            <div class="polaroid"><img src="6.jpg"><p>Forever ✨</p></div>
-            <div class="polaroid"><img src="7.jpg"><p>My Strength ❤️</p></div>
-            <div class="polaroid"><img src="8.jpg"><p>So Beautiful ✨</p></div>
-            <div class="polaroid"><img src="9.jpg"><p>Mine ❤️</p></div>
-            <div class="polaroid"><img src="10.jpg"><p>Together ✨</p></div>
-            <div class="polaroid"><img src="11.jpg"><p>Happiness ❤️</p></div>
-            <div class="polaroid"><img src="12.jpg"><p>Best Choice ✨</p></div>
-            <div class="polaroid"><img src="13.jpg"><p>Soulmate ❤️</p></div>
-            <div class="polaroid"><img src="14.jpg"><p>My Queen ✨</p></div>
-            <div class="polaroid"><img src="15.jpg"><p>I Love You ❤️</p></div>
+    <!-- Chapter 3: The Gallery (High Standard Masonry) -->
+    <section class="chapter" id="chap3">
+        <h2 class="section-title">The Reason I Breathe</h2>
+        <div class="masonry-gallery">
+            <!-- Place your 15 images here -->
+            <div class="m-item"><img src="1.jpg"><span>My Universe</span></div>
+            <div class="m-item"><img src="2.jpg"><span>That Smile ✨</span></div>
+            <div class="m-item"><img src="3.jpeg"><span>Our Bond</span></div>
+            <div class="m-item"><img src="4.jpg"><span>My Peace</span></div>
+            <div class="m-item"><img src="5.jpg"><span>Pure Soul</span></div>
+            <div class="m-item"><img src="6.jpg"><span>Togetherness</span></div>
+            <div class="m-item"><img src="7.jpg"><span>The Best Choice</span></div>
+            <div class="m-item"><img src="8.jpg"><span>Love</span></div>
+            <div class="m-item"><img src="9.jpg"><span>Treasured</span></div>
+            <div class="m-item"><img src="10.jpg"><span>Happiness</span></div>
+            <div class="m-item"><img src="11.jpg"><span>My Queen</span></div>
+            <div class="m-item"><img src="12.jpg"><span>Life ✨</span></div>
+            <div class="m-item"><img src="13.jpg"><span>Strength</span></div>
+            <div class="m-item"><img src="14.jpg"><span>Endless</span></div>
+            <div class="m-item"><img src="15.jpg"><span>Forever</span></div>
         </div>
-        <button class="main-btn promise-btn" onclick="showScreen(4)">My Final Promise 💍</button>
+        <button class="nav-btn" onclick="nextChapter(4)">My Sacred Vow 💍</button>
     </section>
 
-    <!-- Section 4: The Final Promise -->
-    <section class="screen hidden" id="screen4">
-        <div class="final-card">
-            <h2 class="loving-title">A Lifetime Promise</h2>
-            <p class="final-promise-text">
-                I promise to cherish you more than I did yesterday. 
-                I promise to protect your smile, even from my own anger. 
-                You are my forever, and I will never let you go again.
-            </p>
-            <p class="signature">Yours and only yours, <br><strong>Osama</strong></p>
+    <!-- Chapter 4: The Final Vow -->
+    <section class="chapter" id="chap4">
+        <div class="vow-card">
+            <h2 class="vow-title">A Lifetime Vow</h2>
+            <div class="vow-content">
+                <p>"I promise to guard your heart as my own. I promise that my love will always be louder than my anger. You are my home, and I will always find my way back to you."</p>
+            </div>
+            <div class="signature-box">
+                <p>Hamesha Tumhara,</p>
+                <h3>Osama</h3>
+            </div>
         </div>
     </section>
 
