@@ -15,7 +15,7 @@ function nextChapter(num) {
 
 // Deep Apology Typing
 function startTyping() {
-    const text = "Misbah, mere alfaz gusse mein niklay thay, lekin meri mohabbat sachi hai. Aap meri zindagi ki sab se khoobsurat haqiqat hain. Please, mujhe apne dil se door mat karna... ❤️";
+    const text = "Misbah❤️ Meri Jaan❤️ Sorry Yaar🥺❤️... Main aap pe blkl ghussa nahi krna chahta... But Misbah❤️ you are My Girl❤️ My Love❤️ My life❤️... is waja se thora zyadah keh diya shayd... I know you are loyal Meri Jaan❤️... Bs Misbah💗💖 Hamari khushiyan ek doosre se honi chahiyen... Main chahta hun k hamare drmayana just husband wife jesa na ho.. bl k ek friend ki trha hansi mazak bhi ho❤️... Hum ek doosre k saath khoob enjoy kren... ya Family k saath kren... jb hamari enjoyment sirf ek doosre k saath hogi ya Family k saath hogi... To kabhi aesa kuch hoga hi nahi jis se is trha k ma'amlaat hon jis se hamnara rishta kmzor pr jae.. Mujhe aap se emptionally attachment hai... Main aap se real LOVE krta hun... Mujhe aap se emptionally attachment hai❤️ Plzz ab ye baat na nikle.. I know aap Loyal hain mere liye❤️... Aur bohot Achi hain❤️ aur Intention ghalt nahi thi aapki... So plzz ab aap relax rahen.. Agr aap chahti hian k main bhi normal rahun... to aap blkl bhi upset na hon aur na upst dikhen❤️ I LOVE YOU MISBAH MERI JAAN❤️💗❤️";
     const el = document.getElementById('typing-text');
     if(el.innerHTML !== "") return; // Prevent double typing
     
