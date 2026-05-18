@@ -1,278 +1,253 @@
-/* --- LUXURY THEME VARIABLES --- */
-:root {
-    --primary: #c9184a;     /* Deep Crimson */
-    --gold: #d4af37;        /* Metallic Gold */
-    --gold-glow: rgba(212, 175, 55, 0.4);
-    --dark: #0a0a0a;        /* Midnight Black */
-    --card-bg: rgba(20, 20, 20, 0.9);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* --- RESET & BASE --- */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    background-color: var(--dark);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-    cursor: default;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 182, 193, 0.55), transparent 30%),
+    linear-gradient(135deg, #fff0f6, #ffe4ec, #ffd6e7);
+  color: #4b1f33;
+  position: relative;
 }
 
-/* --- LAYOUT: CHAPTERS --- */
-.chapter {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(170, 60, 100, 0.12);
+  padding: 28px;
+}
+
+.hero {
+  text-align: center;
+  padding: 44px 28px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: #c2185b;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(194, 24, 91, 0.12);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 14px;
+  color: #8e1d4c;
+}
+
+.subtitle {
+  font-size: 1.08rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #6b3550;
+  line-height: 1.8;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  border: none;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff4d8d, #ff7aa9);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(255, 77, 141, 0.28);
+}
+
+.secondary {
+  background: #fff;
+  color: #c2185b;
+  box-shadow: 0 14px 30px rgba(194, 24, 91, 0.12);
+}
+
+.surprise {
+  margin-top: 24px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #7b2147;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 18px;
+  border-radius: 18px;
+  border-left: 5px solid #ff4d8d;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery-section h2,
+.message-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+  color: #8e1d4c;
+}
+
+.gallery-section p,
+.message-section p {
+  color: #6b3550;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
+}
+
+.quote {
+  margin-top: 12px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 77, 141, 0.12), rgba(255, 122, 169, 0.12));
+  color: #8e1d4c;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ff4d8d;
+  transform: rotate(45deg);
+  animation: floatUp linear forwards;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ff4d8d;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -8px;
+  left: 0;
+}
+
+.heart::after {
+  left: -8px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg) scale(0.8);
     opacity: 0;
-    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    text-align: center;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(45deg) scale(1.2);
+    opacity: 0;
+  }
 }
 
-.chapter.active { 
-    opacity: 1; 
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* --- TYPOGRAPHY --- */
-.main-title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-}
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+    padding-top: 22px;
+  }
 
-.pre-title { 
-    font-family: 'Great Vibes', cursive; 
-    color: var(--primary); 
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 10px;
-}
-
-.deep-text {
-    max-width: 600px;
-    font-weight: 200;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    color: #ccc;
-    margin-bottom: 30px;
-}
-
-/* --- THE LUXURY BUTTONS --- */
-.luxury-btn {
-    position: relative;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 16px 40px;
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
-    margin-top: 40px;
-    display: inline-block;
-    text-decoration: none;
-    z-index: 5;
-}
-
-.luxury-btn .btn-text {
-    position: relative;
-    z-index: 2;
-}
-
-.luxury-btn:hover {
-    color: var(--dark);
-    box-shadow: 0 0 30px var(--gold-glow);
-    transform: translateY(-5px);
-}
-
-.luxury-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gold);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
-}
-
-.luxury-btn:hover::before {
-    left: 0;
-}
-
-/* --- MASONRY GALLERY (PREMIUM) --- */
-.masonry-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    width: 90%;
-    max-width: 1200px;
-    max-height: 65vh;
-    overflow-y: auto;
+  .card {
     padding: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--gold) var(--dark);
-}
+    border-radius: 22px;
+  }
 
-.m-item {
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-    height: 400px;
-}
+  .hero {
+    padding: 32px 18px;
+  }
 
-.m-item img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.8s ease, filter 0.8s ease; 
-    filter: grayscale(40%) contrast(110%); 
-}
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 
-.m-item:hover img { 
-    transform: scale(1.08); 
-    filter: grayscale(0%) contrast(100%); 
-}
+  h1 {
+    font-size: 2.1rem;
+  }
 
-.m-item span {
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-    padding: 25px 15px; 
-    font-family: 'Great Vibes', cursive; 
-    font-size: 1.8rem;
-    color: var(--gold);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.5s ease;
-}
-
-.m-item:hover span {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- 3D CUBE (PROFESSIONAL) --- */
-.cube-showcase { 
-    perspective: 1200px; 
-    margin-bottom: 60px; 
-}
-
-.cube { 
-    width: 160px;
-    height: 160px;
-    position: relative;
-    transform-style: preserve-3d; 
-    animation: rotateCube 25s linear infinite; 
-}
-
-.face { 
-    position: absolute; 
-    width: 160px; 
-    height: 160px; 
-    background: rgba(10, 10, 10, 0.95); 
-    border: 1.5px solid var(--gold); 
-    color: var(--gold); 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 1rem; 
-    font-weight: 600;
-    letter-spacing: 1px;
-    box-shadow: inset 0 0 15px var(--gold-glow);
-}
-
-/* Cube Positioning */
-.front  { transform: rotateY(0deg) translateZ(80px); }
-.back   { transform: rotateY(180deg) translateZ(80px); }
-.right  { transform: rotateY(90deg) translateZ(80px); }
-.left   { transform: rotateY(-90deg) translateZ(80px); }
-.top    { transform: rotateX(90deg) translateZ(80px); }
-.bottom { transform: rotateX(-90deg) translateZ(80px); }
-
-@keyframes rotateCube { 
-    from { transform: rotateX(0) rotateY(0); } 
-    to { transform: rotateX(360deg) rotateY(360deg); } 
-}
-
-/* --- APOLOGY LETTER BOX --- */
-.letter-box {
-    max-width: 800px;
-    min-height: 150px;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 8px;
-    border-left: 3px solid var(--primary);
-    margin: 20px auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #efefef;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* --- FINAL VOW CARD --- */
-.vow-card {
-    background: var(--card-bg);
-    border: 1px solid var(--gold);
-    padding: 80px 40px;
-    max-width: 700px;
-    position: relative;
-    border-radius: 4px;
-    box-shadow: 0 0 50px rgba(0,0,0,1);
-}
-
-.vow-title { 
-    font-family: 'Cinzel', serif; 
-    color: var(--gold); 
-    margin-bottom: 40px; 
-    letter-spacing: 4px;
-}
-
-.vow-content { 
-    font-size: 1.3rem; 
-    font-style: italic; 
-    line-height: 2; 
-    color: #e0e0e0; 
-    font-family: 'Montserrat', sans-serif;
-}
-
-.signature-box {
-    margin-top: 50px;
-    text-align: right;
-}
-
-.signature-box p { font-size: 0.9rem; color: var(--gold); margin-bottom: 5px; }
-.signature-box h3 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: white; }
-
-/* --- CUSTOM SCROLLBAR --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
-
-/* --- MOBILE OPTIMIZATION --- */
-@media (max-width: 768px) {
-    .main-title { font-size: 2.2rem; letter-spacing: 4px; }
-    .vow-card { padding: 40px 20px; margin: 0 15px; }
-    .vow-content { font-size: 1.1rem; }
-    .masonry-gallery { grid-template-columns: 1fr; }
-    .letter-box { padding: 25px; font-size: 1rem; }
+  .subtitle {
+    font-size: 1rem;
+  }
 }
