@@ -1,75 +1,44 @@
-const loveBtn = document.getElementById("loveBtn");
-const musicBtn = document.getElementById("musicBtn");
-const surpriseText = document.getElementById("surpriseText");
-const bgMusic = document.getElementById("bgMusic");
-const heartsContainer = document.querySelector(".hearts");
+// 1. Music Autoplay Handler (Browsers block direct autoplay)
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
 
-let musicPlaying = false;
-
-loveBtn.addEventListener("click", () => {
-  surpriseText.classList.remove("hidden");
-  surpriseText.style.animation = "none";
-  void surpriseText.offsetWidth;
-  surpriseText.style.animation = "fadeInUp 0.7s ease forwards";
-  createHearts(12);
-});
-
-musicBtn.addEventListener("click", async () => {
-  try {
-    if (musicPlaying) {
-      bgMusic.pause();
-      musicBtn.textContent = "Play Song 🎵";
+musicBtn.addEventListener('click', () => {
+    if (music.paused) {
+        music.play().then(() => {
+            musicBtn.textContent = "⏸️ Pause Music";
+        }).catch(err => {
+            console.log("Audio play blocked: ", err);
+        });
     } else {
-      await bgMusic.play();
-      musicBtn.textContent = "Pause Song ⏸️";
+        music.pause();
+        musicBtn.textContent = "🎵 Play Music";
     }
-    musicPlaying = !musicPlaying;
-  } catch (err) {
-    alert("Song play nahi hua. Please ensure song.mp3 file exists.");
-  }
 });
 
-// Create floating hearts continuously
-setInterval(() => {
-  createHearts(1);
-}, 1800);
+// 2. Countdown Timer / Days Together Counter
+// APNI ENGAGEMENT DATE YAHA SET KAREIN (Format: YYYY-MM-DD)
+const engagementDate = new Date('2024-03-06T00:00:00'); 
 
-function createHearts(count) {
-  for (let i = 0; i < count; i++) {
-    const heart = document.createElement("div");
-    heart.className = "heart";
+function updateCounter() {
+    const now = new Date();
+    const difference = now - engagementDate; // Calculate time passed since engagement
 
-    const size = Math.random() * 12 + 10;
-    const left = Math.random() * 100;
-    const duration = Math.random() * 4 + 5;
+    // Time calculations
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    heart.style.left = `${left}%`;
-    heart.style.bottom = `-20px`;
-    heart.style.width = `${size}px`;
-    heart.style.height = `${size}px`;
-    heart.style.animationDuration = `${duration}s`;
-    heart.style.opacity = `${Math.random() * 0.5 + 0.35}`;
-
-    heartsContainer.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, duration * 1000);
-  }
+    const countdownElement = document.getElementById('countdown');
+    
+    countdownElement.innerHTML = `
+        <div class="box"><span>${days}</span>Days</div>
+        <div class="box"><span>${hours}</span>Hours</div>
+        <div class="box"><span>${minutes}</span>Minutes</div>
+        <div class="box"><span>${seconds}</span>Seconds</div>
+    `;
 }
 
-// Smooth fade animation for surprise text
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`;
-document.head.appendChild(style);
+// Update counter every second
+setInterval(updateCounter, 1000);
+updateCounter();
