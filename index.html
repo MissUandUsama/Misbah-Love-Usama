@@ -1,101 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Heart's Journey | For Misbah ❤️</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Misbah ❤️</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+  <div class="hearts"></div>
 
-    <div class="cursor"></div>
-    <div id="particles-js"></div>
+  <main class="container">
+    <section class="hero card">
+      <div class="badge">A little piece of my heart</div>
+      <h1>Misbah, You Are My Favorite Smile ❤️</h1>
+      <p class="subtitle">
+        A small website made with love, just to remind you how special you are to me.
+      </p>
 
-    <!-- Chapter 1: The Realization -->
-    <section class="chapter active" id="chap1">
-        <div class="content-wrapper">
-            <h2 class="pre-title">To the Queen of my heart,</h2>
-            <h1 class="main-title reveal">I'm Sorry, Misbah</h1>
-            <p class="deep-text reveal">Anger is a temporary cloud, but you are my eternal sun. I am lost without your light.</p>
-            
-            <!-- Updated Luxury Button 1 -->
-            <div class="scroll-indicator luxury-btn" onclick="nextChapter(2)">
-                <span class="btn-text">Step Into My Soul ❤️</span>
-            </div>
-        </div>
+      <div class="button-row">
+        <button id="loveBtn" class="btn primary">Press for a Surprise</button>
+        <button id="musicBtn" class="btn secondary">Play Song 🎵</button>
+      </div>
+
+      <p id="surpriseText" class="surprise hidden">
+        Misbah, tum meri duniya ki sab se pyari blessing ho. Har din tumhari yaad mere dil ko aur bhi khubsurat bana deti hai. 💖
+      </p>
     </section>
 
-    <!-- Chapter 2: The Core (Apology & Message) -->
-    <section class="chapter" id="chap2">
-        <div class="cube-showcase">
-            <div class="cube">
-                <div class="face front">Misbah 🥀❤️</div>
-                <div class="face back">Sorry 😔❤️</div>
-                <div class="face right">My Love ❤️</div>
-                <div class="face left">My World ❤️</div>
-                <div class="face top">Your Osama 🥀</div>
-                <div class="face bottom">Always</div>
-            </div>
-        </div>
-        <div class="letter-box">
-            <!-- Typing text will appear here from script.js -->
-            <p id="typing-text"></p>
-        </div>
+    <section class="gallery-section card">
+      <h2>Our Sweet Memories</h2>
+      <p>Replace these images with your own special pictures.</p>
 
-        <!-- Updated Luxury Button 2 -->
-        <button class="nav-btn luxury-btn" onclick="nextChapter(3)">
-            <span class="btn-text">Our Timeless Memories 📸</span>
-            <span class="btn-glow"></span>
-        </button>
+      <div class="gallery">
+        <img src="1.jpg" alt="Memory 1" />
+        <img src="2.jpg" alt="Memory 2" />
+        <img src="3.jpg" alt="Memory 3" />
+        <img src="4.jpg" alt="Memory 4" />
+      </div>
     </section>
 
-    <!-- Chapter 3: The Gallery (Masonry Layout) -->
-    <section class="chapter" id="chap3">
-        <h2 class="section-title">The Reason I Breathe</h2>
-        <div class="masonry-gallery">
-            <div class="m-item"><img src="1.jpg"><span>My Universe</span></div>
-            <div class="m-item"><img src="2.jpg"><span>That Smile ✨🥀</span></div>
-            <div class="m-item"><img src="3.jpeg"><span>Our Bond</span></div>
-            <div class="m-item"><img src="4.jpg"><span>My Peace</span></div>
-            <div class="m-item"><img src="5.jpg"><span>Pure Soul</span></div>
-            <div class="m-item"><img src="6.jpg"><span>Togetherness</span></div>
-            <div class="m-item"><img src="7.jpg"><span>The Best Choice</span></div>
-            <div class="m-item"><img src="8.jpg"><span>Love</span></div>
-            <div class="m-item"><img src="9.jpg"><span>Treasured</span></div>
-            <div class="m-item"><img src="10.jpg"><span>Happiness</span></div>
-            <div class="m-item"><img src="11.jpg"><span>My Queen</span></div>
-            <div class="m-item"><img src="12.jpg"><span>Life 🥀✨</span></div>
-            <div class="m-item"><img src="13.jpg"><span>Strength</span></div>
-            <div class="m-item"><img src="14.jpg"><span>Endless</span></div>
-            <div class="m-item"><img src="15.jpg"><span>Forever</span></div>
-        </div>
-
-        <!-- Updated Luxury Button 3 -->
-        <button class="nav-btn luxury-btn" onclick="nextChapter(4)">
-            <span class="btn-text">My Sacred Vow 💍</span>
-            <span class="btn-glow"></span>
-        </button>
+    <section class="message-section card">
+      <h2>A Message for You</h2>
+      <p>
+        Misbah, tum sirf meri girl nahi ho, tum meri happiness ho. Tumhari har ek smile,
+        meri strength ban jaati hai. Yeh website tumhare liye ek chhota sa pyaar bhara gift hai.
+      </p>
+      <div class="quote">
+        "In every heartbeat, there is a little bit of you."
+      </div>
     </section>
+  </main>
 
-    <!-- Chapter 4: The Final Vow -->
-    <section class="chapter" id="chap4">
-        <div class="vow-card">
-            <h2 class="vow-title">My Lifetime Promise</h2>
-            <div class="vow-content">
-                <p>"I promise to guard your heart as my own. I promise that my love will always be louder than my anger. You are my home, and I will always find my way back to you."</p>
-            </div>
-            <div class="signature-box">
-                <p>Always yours,</p>
-                <h3>Usama 🥀❤️</h3>
-            </div>
-        </div>
-    </section>
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg" />
+  </audio>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
