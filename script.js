@@ -1,44 +1,47 @@
-// 1. Music Autoplay Handler (Browsers block direct autoplay)
+// 1. Premium Music Player Trigger
 const music = document.getElementById('bg-music');
-const musicBtn = document.getElementById('music-btn');
+const playBtn = document.getElementById('play-btn');
 
-musicBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
     if (music.paused) {
         music.play().then(() => {
-            musicBtn.textContent = "⏸️ Pause Music";
-        }).catch(err => {
-            console.log("Audio play blocked: ", err);
-        });
+            playBtn.textContent = "⏸ Pause";
+        }).catch(err => console.log("Playback issue: ", err));
     } else {
         music.pause();
-        musicBtn.textContent = "🎵 Play Music";
+        playBtn.textContent = "▶ Play";
     }
 });
 
-// 2. Countdown Timer / Days Together Counter
-// APNI ENGAGEMENT DATE YAHA SET KAREIN (Format: YYYY-MM-DD)
+// 2. Interactive Letter Envelope Trigger
+const envelope = document.getElementById('envelope');
+envelope.addEventListener('click', () => {
+    envelope.classList.toggle('open');
+});
+
+// 3. High-End Countdown/Togetherness Clock
 const engagementDate = new Date('2024-03-06T00:00:00'); 
 
-function updateCounter() {
+function renderLuxuryCounter() {
     const now = new Date();
-    const difference = now - engagementDate; // Calculate time passed since engagement
+    const diff = now - engagementDate;
 
-    // Time calculations
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    // Calculations
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    const countdownElement = document.getElementById('countdown');
+    const clockContainer = document.getElementById('luxury-counter');
     
-    countdownElement.innerHTML = `
-        <div class="box"><span>${days}</span>Days</div>
-        <div class="box"><span>${hours}</span>Hours</div>
-        <div class="box"><span>${minutes}</span>Minutes</div>
-        <div class="box"><span>${seconds}</span>Seconds</div>
+    clockContainer.innerHTML = `
+        <div class="counter-box"><span>${days}</span> Days</div>
+        <div class="counter-box"><span>${hours}</span> Hours</div>
+        <div class="counter-box"><span>${minutes}</span> Minutes</div>
+        <div class="counter-box"><span>${seconds}</span> Seconds</div>
     `;
 }
 
-// Update counter every second
-setInterval(updateCounter, 1000);
-updateCounter();
+// Tick setup
+setInterval(renderLuxuryCounter, 1000);
+renderLuxuryCounter();
