@@ -2,104 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Forever Story | Osama & Misbah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Forever Yours | Osama & Misbah</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Monsieur+La+Doulaise&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Floating Music Widget -->
-    <div class="music-widget">
-        <p id="track-title">🎵 Dynamic Track</p>
-        <div class="music-controls">
-            <button id="play-btn">▶ Play</button>
-            <audio id="bg-music" loop>
-                <source src="song.mp3" type="audio/mpeg">
-            </audio>
+    <div class="music-player-bar">
+        <div class="player-info">
+            <span class="heart-beat">❤️</span>
+            <div class="track-details">
+                <p class="track-name">Our Special Song</p>
+                <p class="track-status">Click play to feel the love</p>
+            </div>
         </div>
+        <button id="play-btn" class="player-ctrl-btn">▶ PLAY</button>
+        <audio id="bg-music" loop>
+            <source src="song.mp3" type="audio/mpeg">
+        </audio>
     </div>
 
-    <!-- Section 1: Premium Hero Header -->
-    <header class="hero-section">
+    <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="fade-in-tag">The Beginning of Forever</span>
-            <h1 class="couple-names">Osama & Misbah</h1>
-            <div class="floating-hearts">
-                <span>❤️</span><span>💖</span><span>💕</span>
+            <p class="hero-tagline">Together Since 06.03.2024</p>
+            <h1 class="main-title">Osama & Misbah</h1>
+            <p class="hero-carousels">Humari Mohabbat Ka Ek Haseen Safar</p>
+            <div class="scroll-indicator">
+                <span></span>
             </div>
-            <p class="hero-date">06 . 03 . 2024</p>
-            <a href="#timeline" class="scroll-btn">Our Story ↓</a>
         </div>
     </header>
 
-    <!-- Section 2: Interactive Counter -->
     <section class="counter-section">
         <div class="container">
             <h2 class="section-title">Days of Togetherness</h2>
-            <p class="section-subtitle">Aap ke sath guzra hua har lamha ek tohfa hai.</p>
-            <div id="luxury-counter" class="counter-grid">
-                <!-- Clock will inject here -->
-            </div>
+            <p class="section-subtitle">Aap ke sath guzra har ek pal zindagi ka sab se keemti tohfa hai.</p>
+            <div id="luxury-clock" class="clock-grid">
+                </div>
         </div>
     </section>
 
-    <!-- Section 3: The Love Timeline (Bari Website Feature) -->
-    <section id="timeline" class="timeline-section">
+    <section class="timeline-section">
         <div class="container">
-            <h2 class="section-title">Our Beautiful Milestones</h2>
-            <div class="timeline-container">
-                
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>The First Chapter</h3>
-                        <p>Woh haseen lamha jab hamari kahani ka aaghaz hua aur zindagi ne ek khoobsurat mor liya.</p>
-                    </div>
+            <h2 class="section-title">Our Milestone Chapters</h2>
+            <p class="section-subtitle">Woh lamhe jo hamare dilon mein hamesha zinda rahenge</p>
+            
+            <div class="mobile-timeline">
+                <div class="timeline-card">
+                    <div class="card-badge">Chapter 1</div>
+                    <h3>The Beautiful Start</h3>
+                    <p>Zindagi ne ek naya mor liya jab aap se pehli baar baat hui. Woh shuruaat jo aaj hamari poori zindagi ban chuki hai.</p>
                 </div>
 
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>The Day We Promised</h3>
-                        <span class="milestone-date">March 6, 2024</span>
-                        <h3>Our Engagement Ring 💍</h3>
-                        <p>Woh din jab hum hamesha ke liye ek doosre ke bandhan mein bandh gaye. Sab se yaadgaar aur sacha din!</p>
-                    </div>
+                <div class="timeline-card highlighted">
+                    <div class="card-badge gold">06 March 2024</div>
+                    <h3>Our Engagement Day 💍</h3>
+                    <p>Woh maseha lamha jab hamari mohabbat ko ek pakiza naam mila. Hum hamesha ke liye ek doosre ke bandhan mein bandh gaye.</p>
                 </div>
 
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Growing Together</h3>
-                        <p>Har mushkil ka samna sath mil kar karna, ek doosre ki himmat banna, aur har naye din ke sath mohabbat ka gehra hona.</p>
-                    </div>
+                <div class="timeline-card">
+                    <div class="card-badge">Chapter 3</div>
+                    <h3>Growing Stronger</h3>
+                    <p>Har din ke sath hamari samajhdari aur mohabbat mazeed gehri hoti gayi. Aap ka sath meri sab se bari taqat hai.</p>
                 </div>
-
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>The Beautiful Present</h3>
-                        <p>Aaj hum jahan hain, jitna sikh rahe hain aur jitne khwab sath dekh rahe hain—yeh sirf ek shuruaat hai.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Interactive Virtual Letter (Most Special Feature) -->
+    <section class="reasons-section">
+        <div class="container">
+            <h2 class="section-title">Reasons Why I Love You</h2>
+            <p class="section-subtitle">Kuch baatein jo aap ko mere liye sab se khaas banati hain</p>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <span class="card-icon">✨</span>
+                    <h3>Aap Ki Muskurahat</h3>
+                    <p>Aap ki ek smile meri poori zindagi ke thakaao aur pareshaniyon ko pal bhar mein door kar deti hai.</p>
+                </div>
+                <div class="reason-card">
+                    <span class="card-icon">👑</span>
+                    <h3>Aap Ki Samajhdari</h3>
+                    <p>Jis tarah aap har cheez ko bht kahoobsurti se sambhalti hain, woh mujhe aap ka aur bhi zyada deewana bana deta hai.</p>
+                </div>
+                <div class="reason-card">
+                    <span class="card-icon">🌸</span>
+                    <h3>Aap Ka Sacha Dil</h3>
+                    <p>Aap jaisa sacha aur saaf dil ka insan milna mere liye kisi moajizay (miracle) se kam nahi hai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="letter-section">
         <div class="container">
-            <h2 class="section-title">A Message Just For You</h2>
-            <p class="section-subtitle">Click the envelope to open a piece of my heart.</p>
+            <h2 class="section-title">A Private Note For You</h2>
+            <p class="section-subtitle">Tap the envelope below to read what's in my heart</p>
             
-            <div class="envelope-wrapper" id="envelope">
-                <div class="envelope">
-                    <div class="flap"></div>
-                    <div class="pocket"></div>
-                    <div class="letter">
-                        <div class="letter-text">
-                            <h3>Dearest Misbah,</h3>
-                            <p>Aap meri zindagi ki sab se bari khushi hain. Aap ki samajhdari, aap ka sath aur aap ka har haal mein muskurana meri sab se bari taqat hai. Main bohot khush-kismat hoon ke mujhe aap jaisa haseen aur sacha jeevan sathi mila. Yeh website sirf ek chota sa zariya hai aap ko yeh batane ka ke aap mere liye kitni special hain!</p>
-                            <p class="signature">With All My Love,<br><strong>Osama</strong></p>
+            <div class="envelope-area">
+                <div class="envelope-wrapper" id="envelope">
+                    <div class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter">
+                            <div class="letter-content">
+                                <h3>Meri Pyaari Misbah,</h3>
+                                <p>Aap sirf meri fiancée nahi hain, aap meri rooh ka hissa hain. Yeh website sirf ek chota sa tohfa hai aap ko yeh yaad dilane ka ke aap mere liye kitni special hain.</p>
+                                <p>Main vaada karta hoon ke har khushi aur har mushkil mein aap ka hath thame rakhunga. I love you so much, hamesha aur sab se zyada!</p>
+                                <p class="sign">Yours Forever,<br><strong>Osama</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,29 +120,25 @@
         </div>
     </section>
 
-    <!-- Section 5: Premium Cinematic Gallery -->
-    <section class="mosaic-gallery">
+    <section class="gallery-section">
         <div class="container">
-            <h2 class="section-title">Our Magical Gallery</h2>
-            <p class="section-subtitle">Captured moments, eternal memories.</p>
+            <h2 class="section-title">Captured Eternal Moments</h2>
+            <p class="section-subtitle">Hamari haseen yaadein, tasveeron ke aaine mein</p>
             
-            <div class="mosaic-grid">
-                <!-- Grid layouts with different size impacts -->
-                <div class="mosaic-item tall"><img src="1.jpg" alt="Memory 1"><div class="img-hover"><span>❤️</span></div></div>
-                <div class="mosaic-item wide"><img src="2.jpg" alt="Memory 2"><div class="img-hover"><span>💖</span></div></div>
-                <div class="mosaic-item"><img src="3.jpg" alt="Memory 3"><div class="img-hover"><span>✨</span></div></div>
-                <div class="mosaic-item"><img src="4.jpg" alt="Memory 4"><div class="img-hover"><span>💕</span></div></div>
-                <div class="mosaic-item tall"><img src="5.jpg" alt="Memory 5"><div class="img-hover"><span>🔒</span></div></div>
-                <div class="mosaic-item wide"><img src="6.jpg" alt="Memory 6"><div class="img-hover"><span>🌹</span></div></div>
-                <div class="mosaic-item"><img src="7.jpg" alt="Memory 7"><div class="img-hover"><span>🔮</span></div></div>
-                <div class="mosaic-item"><img src="8.jpg" alt="Memory 8"><div class="img-hover"><span>👑</span></div></div>
+            <div class="mobile-gallery">
+                <div class="photo-frame"><img src="1.jpg" alt="Memory 1"><div class="frame-caption">Our Absolute Favorite ❤️</div></div>
+                <div class="photo-frame"><img src="2.jpg" alt="Memory 2"><div class="frame-caption">The Way You Look At Me ✨</div></div>
+                <div class="photo-frame"><img src="3.jpg" alt="Memory 3"><div class="frame-caption">Beautiful Smiles 🥰</div></div>
+                <div class="photo-frame"><img src="4.jpg" alt="Memory 4"><div class="frame-caption">Together Hand in Hand 🔒</div></div>
+                <div class="photo-frame"><img src="5.jpg" alt="Memory 5"><div class="frame-caption">Pure Happiness 🌹</div></div>
+                <div class="photo-frame"><img src="6.jpg" alt="Memory 6"><div class="frame-caption">Forever To Go 👑</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="premium-footer">
-        <p>Designed Specially For Misbah | © 2026</p>
+    <footer>
+        <p class="footer-text">Handcrafted with pure love by Osama for Misbah</p>
+        <p class="footer-sub">© 2026 | All Rights Reserved to Our Story</p>
     </footer>
 
     <script src="script.js"></script>
