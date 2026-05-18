@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Misbah ❤️</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Journey | Osama & Misbah</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hearts"></div>
 
-  <main class="container">
-    <section class="hero card">
-      <div class="badge">A little piece of my heart</div>
-      <h1>Misbah, You Are My Favorite Smile ❤️</h1>
-      <p class="subtitle">
-        A small website made with love, just to remind you how special you are to me.
-      </p>
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-      <div class="button-row">
-        <button id="loveBtn" class="btn primary">Press for a Surprise</button>
-        <button id="musicBtn" class="btn secondary">Play Song 🎵</button>
-      </div>
+    <!-- Music Control Button -->
+    <button id="music-btn" class="music-btn">🎵 Play Music</button>
 
-      <p id="surpriseText" class="surprise hidden">
-        Misbah, tum meri duniya ki sab se pyari blessing ho. Har din tumhari yaad mere dil ko aur bhi khubsurat bana deti hai. 💖
-      </p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="main-title">Osama & Misbah</h1>
+            <p class="subtitle">Our Beautiful Engagement</p>
+            <div class="heart">❤️</div>
+        </div>
+    </header>
+
+    <!-- Message Section -->
+    <section class="love-message">
+        <div class="container">
+            <h2>To My Beautiful Fiancée, Misbah</h2>
+            <p class="message-text">
+                Aap meri zindagi ka sab se haseen tohfa hain. Jab se aap meri zindagi mein aayi hain, 
+                har lamha bohot khubsoorat ho gaya hai. Yeh choti si jagah sirf humare un haseen 
+                yaadon ke naam, jo humne sath guzari hain aur jo aage guzarne wale hain.
+            </p>
+        </div>
     </section>
 
-    <section class="gallery-section card">
-      <h2>Our Sweet Memories</h2>
-      <p>Replace these images with your own special pictures.</p>
-
-      <div class="gallery">
-        <img src="1.jpg" alt="Memory 1" />
-        <img src="2.jpg" alt="Memory 2" />
-        <img src="3.jpg" alt="Memory 3" />
-        <img src="4.jpg" alt="Memory 4" />
-      </div>
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2>Celebrating Our Togetherness</h2>
+            <div id="countdown" class="countdown-container">
+                <!-- Countdown elements will be injected by JavaScript -->
+                <p>Loading our special moments...</p>
+            </div>
+        </div>
     </section>
 
-    <section class="message-section card">
-      <h2>A Message for You</h2>
-      <p>
-        Misbah, tum sirf meri girl nahi ho, tum meri happiness ho. Tumhari har ek smile,
-        meri strength ban jaati hai. Yeh website tumhare liye ek chhota sa pyaar bhara gift hai.
-      </p>
-      <div class="quote">
-        "In every heartbeat, there is a little bit of you."
-      </div>
+    <!-- Image Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Our Magical Memories</h2>
+            <p class="section-subtitle">Har tasveer ek kahani bayaan karti hai...</p>
+            
+            <div class="gallery-grid">
+                <!-- Aap apni images ke mutabiq inhein barha ya badal sakte hain -->
+                <div class="gallery-item"><img src="1.jpg" alt="Memory 1"></div>
+                <div class="gallery-item"><img src="2.jpg" alt="Memory 2"></div>
+                <div class="gallery-item"><img src="3.jpg" alt="Memory 3"></div>
+                <div class="gallery-item"><img src="4.jpg" alt="Memory 4"></div>
+                <div class="gallery-item"><img src="5.jpg" alt="Memory 5"></div>
+                <div class="gallery-item"><img src="6.jpg" alt="Memory 6"></div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <audio id="bgMusic" loop>
-    <source src="song.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ by Osama for Misbah</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
