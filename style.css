@@ -1,4 +1,12 @@
-/* Reset and Base Styles */
+/* Premium Base Setup */
+:root {
+    --primary-rose: #ff4b6e;
+    --dark-rose: #d63354;
+    --soft-gold: #dfb76c;
+    --bg-gradient: linear-gradient(135deg, #fff5f6 0%, #ffebed 100%);
+    --text-dark: #2c2627;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,192 +14,268 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fff5f5;
-    color: #4a4a4a;
+    font-family: 'Poppins', sans-serif;
+    background: #fff8f8;
+    color: var(--text-dark);
+    line-height: 1.8;
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+    padding: 0 25px;
 }
 
-/* Floating Music Button */
-.music-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: rgba(255, 75, 110, 0.9);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.music-btn:hover {
-    background: #ff2a5f;
-    transform: scale(1.05);
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('1.jpg') no- center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-
-/* Note: Agar background image change karni ho to url('1.jpg') ki jagah koi achi pic laga sakte hain */
-
-.main-title {
+/* Sections Global Headers */
+.section-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 4.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    animation: fadeIn 2s ease-in;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 300;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-
-.heart {
-    font-size: 2.5rem;
-    margin-top: 20px;
-    animation: pulse 1.5s infinite;
-}
-
-/* Love Message Section */
-.love-message {
-    padding: 80px 0;
-    background: white;
-}
-
-.love-message h2, .countdown-section h2, .gallery-section h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    color: #ff4b6e;
-    margin-bottom: 20px;
-}
-
-.message-text {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    color: #666;
-    font-style: italic;
-}
-
-/* Countdown Section */
-.countdown-section {
-    padding: 60px 0;
-    background: #ffe3e8;
-}
-
-.countdown-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    min-width: 100px;
-    box-shadow: 0 5px 15px rgba(255, 75, 110, 0.1);
-}
-
-.box span {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #ff4b6e;
-}
-
-/* Gallery Section */
-.gallery-section {
-    padding: 80px 0;
+    font-size: 3.5rem;
+    color: var(--dark-rose);
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 .section-subtitle {
-    margin-bottom: 40px;
-    color: #888;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    height: 350px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
     text-align: center;
+    color: #77686a;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* Floating Music Player Widget */
+.music-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 75, 110, 0.2);
+}
+
+#track-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark-rose);
+}
+
+#play-btn {
+    background: var(--primary-rose);
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+#play-btn:hover { background: var(--dark-rose); }
+
+/* Section 1: Cinematic Hero Window */
+.hero-section {
+    height: 100vh;
+    background: url('1.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(to bottom, rgba(44,38,39,0.4), rgba(255,245,246,1));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+}
+
+.fade-in-tag {
     font-size: 0.9rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--soft-gold);
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.couple-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+    margin-bottom: 5px;
+    color: #fff;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+.hero-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    color: var(--text-dark);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-title { font-size: 3rem; }
-    .subtitle { font-size: 1.1rem; }
-    .box { min-width: 70px; padding: 15px; }
-    .box span { font-size: 1.8rem; }
+.scroll-btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--dark-rose);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid var(--primary-rose);
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+.scroll-btn:hover { letter-spacing: 2px; }
+
+/* Section 2: Luxury Counter Layout */
+.counter-section { padding: 80px 0; background: #fff5f6; }
+.counter-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+
+.counter-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 140px;
+    box-shadow: 0 15px 35px rgba(255, 75, 110, 0.05);
+    text-align: center;
+    border: 1px solid rgba(255, 75, 110, 0.05);
+    transition: 0.4s;
+}
+.counter-box:hover { transform: translateY(-5px); }
+.counter-box span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--dark-rose);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Section 3: Professional Luxury Timeline */
+.timeline-section { padding: 100px 0; background: white; }
+.timeline-container { position: relative; max-width: 900px; margin: 0 auto; }
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px; background: rgba(255, 75, 110, 0.2);
+    top: 0; bottom: 0; left: 50%; margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+.timeline-item::after {
+    content: '❤️';
+    position: absolute;
+    right: -14px; top: 15px;
+    background: white; width: 30px; height: 30px;
+    border-radius: 50%; text-align: center; line-height: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); z-index: 1;
+}
+.right::after { left: -16px; }
+.left { left: 0; }
+.right { left: 50%; }
+
+.timeline-content {
+    padding: 30px; background: #fff8f9;
+    position: relative; border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+.timeline-content h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); margin-bottom: 10px;}
+.milestone-date { color: var(--primary-rose); font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 5px;}
+
+/* Section 4: Interactive Letter Design (Envelope) */
+.letter-section { padding: 100px 0; background: #ffeef0; }
+.envelope-wrapper {
+    position: relative;
+    width: 450px; height: 300px;
+    background: #fff; margin: 0 auto;
+    cursor: pointer; border-radius: 0 0 10px 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.envelope {
+    position: absolute; width: 100%; height: 100%;
+}
+.flap {
+    position: absolute; top: 0; width: 0; height: 0;
+    border-left: 225px solid transparent; border-right: 225px solid transparent;
+    border-top: 150px solid var(--primary-rose);
+    transform-origin: top; transition: transform 0.4s ease 0.4s, z-index 0.2s ease 0.4s;
+    z-index: 3;
+}
+.pocket {
+    position: absolute; bottom: 0; width: 0; height: 0;
+    border-left: 225px solid #ff7b96; border-right: 225px solid #ff7b96;
+    border-bottom: 150px solid var(--dark-rose);
+    border-radius: 0 0 10px 10px; z-index: 4;
+}
+.letter {
+    position: absolute; background: #fff; width: 90%; height: 85%;
+    top: 5%; left: 5%; border-radius: 5px; padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, z-index 0.2s ease; z-index: 2;
+}
+.letter-text { font-family: 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.6; color: #444; }
+.letter-text h3 { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--dark-rose); }
+.signature { text-align: right; margin-top: 15px; font-size: 0.85rem; }
+
+/* Letter Open Mechanism via JS Toggle Class */
+.envelope-wrapper.open .flap {
+    transform: rotateX(180deg); z-index: 1; transition: transform 0.4s ease, z-index 0.2s ease;
+}
+.envelope-wrapper.open .letter {
+    transform: translateY(-130px); z-index: 5; transition: transform 0.4s ease 0.4s, z-index 0.2s ease 0.4s;
+    height: auto; max-height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Section 5: Cinematic Mosaic/Masonry Gallery */
+.mosaic-gallery { padding: 100px 0; background: white; }
+.mosaic-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px; gap: 20px; grid-auto-flow: dense;
+}
+.mosaic-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.mosaic-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
+.mosaic-item.tall { grid-row: span 2; }
+.mosaic-item.wide { grid-column: span 2; }
+
+.img-hover {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: rgba(255, 75, 110, 0.4); backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center;
+    opacity:0; transition: 0.4s; font-size: 2rem;
+}
+.mosaic-item:hover .img-hover { opacity: 1; }
+.mosaic-item:hover img { transform: scale(1.08); }
+
+/* Premium Footer */
+.premium-footer { background: #2c2627; color: #fff8f8; padding: 40px 0; text-align: center; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* Responsive Settings */
+@media(max-width: 768px) {
+    .couple-names { font-size: 3.8rem; }
+    .timeline-container::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; }
+    .timeline-item.right { left: 0; }
+    .timeline-item::after { left: 6px !important; }
+    .envelope-wrapper { width: 100%; max-width: 350px; }
+    .flap, .pocket { border-left-width: 175px; border-right-width: 175px; }
+    .mosaic-item.wide { grid-column: span 1; }
 }
